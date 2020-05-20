@@ -5,12 +5,12 @@ class Car {
     );
   }
 
-  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
-    this.speed = speed;
+  constructor({ speed, price, maxSpeed, isOn, distance }) {
+    this.speed = 0;
     this._price = price;
     this.maxSpeed = maxSpeed;
-    this.isOn = isOn;
-    this.distance = distance;
+    this.isOn = false;
+    this.distance = 0;
   }
 
   get price() {
@@ -39,7 +39,7 @@ class Car {
   }
 
   decelerate(value) {
-    if (this.speed - value > 0) {
+    if (this.speed - value >= 0) {
       this.speed -= value;
     } else {
       console.log('Так медленно ехать нельзя');
@@ -49,6 +49,8 @@ class Car {
   drive(hours) {
     if (this.isOn) {
       this.distance += hours * this.speed;
+    } else {
+      console.log('Машина не двигается');
     }
   }
 }

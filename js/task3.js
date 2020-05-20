@@ -12,12 +12,9 @@ class Storage {
   }
 
   removeItem(item) {
-    const a = this.items.findIndex(currentValue => currentValue === item);
-    if (a === -1) {
-      console.log('Нет такого товара');
-    } else {
-      this.items.splice(a, 1);
-    }
+    this.items.indexOf(item) === -1
+      ? console.log('Нет такого товара')
+      : this.items.splice(this.items.indexOf(item), 1);
   }
 }
 
