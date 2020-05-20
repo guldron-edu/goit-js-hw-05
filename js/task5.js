@@ -5,7 +5,7 @@ class Car {
     );
   }
 
-  constructor({ speed, price, maxSpeed, isOn, distance }) {
+  constructor({ price, maxSpeed }) {
     this.speed = 0;
     this._price = price;
     this.maxSpeed = maxSpeed;
